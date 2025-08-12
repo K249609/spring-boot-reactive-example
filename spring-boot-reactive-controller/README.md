@@ -1,4 +1,45 @@
-# spring-boot-reactive-controller
+...
+<parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.2.1</version>
+</parent>
+
+<dependencies>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-webflux</artifactId>
+    </dependency>
+    
+    <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <scope>provided</scope>
+    </dependency>
+</dependencies>
+
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <executions>        
+                <execution>            
+                    <id>build-info</id>            
+                    <goals>                
+                        <goal>build-info</goal>            
+                    </goals>        
+                    <configuration>                
+                        <additionalProperties>                    
+                            <java.version>${java.version}</java.version>                                   
+                        </additionalProperties>            
+                    </configuration>        
+                </execution>    
+            </executions>
+        </plugin>
+    </plugins>
+</build>
+...# spring-boot-reactive-controller
 
 > ตัวอย่างการเขียน Spring-boot Reactive Controller 
 
@@ -148,3 +189,4 @@ $ mvn spring-boot:run
 - [http://localhost:8080/users/me](http://localhost:8080/users/me)
 
 ![](./result.png)
+
